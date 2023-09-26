@@ -57,7 +57,9 @@ public class PlayerUI : MonoBehaviour
             }
             else GamePause();
         }
-        if (PlayerProgress.hideGunReload == false)
+
+        //handles reload bar
+        if (reload.enabled == true)
         {
             if (reload.value < reload.maxValue)
             {
@@ -120,7 +122,6 @@ public class PlayerUI : MonoBehaviour
         {
             FireGun.reloadGun += TriggerReloadBar;
         }
-
     }
 
     public void OnDisable()

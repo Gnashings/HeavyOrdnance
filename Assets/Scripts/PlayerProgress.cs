@@ -40,7 +40,6 @@ public static class PlayerProgress
     {
         turretInfo = selection;
         hideGunReload = selection.hideUI;
-        Debug.Log(hideGunReload + " " + SceneManager.GetActiveScene().name);
     }
 
     public static void SetBody(string selection)

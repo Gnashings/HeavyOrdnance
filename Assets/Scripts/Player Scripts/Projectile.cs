@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour, PooledObjects
     // Start is called before the first frame update
 
     public AudioSource shotSound;
-    
+
     public float killOffTimer;
     public GameObject effects;
     public SphereCollider exp;
@@ -31,6 +31,7 @@ public class Projectile : MonoBehaviour, PooledObjects
         //shotSound.Play();
         gameObject.SetActive(true);
         gameObject.GetComponent<MeshRenderer>().enabled = true;
+        gameObject.GetComponent<TrailRenderer>().enabled = true;
         exp.enabled = true;
         rb.isKinematic = false;
         rb.velocity = Vector3.zero;
@@ -49,20 +50,21 @@ public class Projectile : MonoBehaviour, PooledObjects
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        gameObject.GetComponent<TrailRenderer>().enabled = false;
         exp.enabled = false;
         gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(chadShot == true && other.CompareTag("EnemyBullet"))
+        if (chadShot == true && other.CompareTag("EnemyBullet"))
         {
             Destroy(other.gameObject);
             return;
         }
-        else if(chadShot == false)
+        else if (chadShot == false)
         {
-            if(other.CompareTag("EnemyBullet") || other.CompareTag("bossBullet"))
+            if (other.CompareTag("EnemyBullet") || other.CompareTag("bossBullet"))
             {
                 Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), other.gameObject.GetComponent<Collider>(), true);
             }
@@ -75,18 +77,18 @@ public class Projectile : MonoBehaviour, PooledObjects
             !other.CompareTag("bossBullet")
            )
         {
-            if(isExplosive)
+            if (isExplosive)
             {
                 explosion.Explode();
             }
-            if (dealsDamage && other.CompareTag("Enemy") && other.gameObject.GetComponentInParent<EnemyStats>()!=null)
+            if (dealsDamage && other.CompareTag("Enemy") && other.gameObject.GetComponentInParent<EnemyStats>() != null)
             {
                 EnemyStats enemyStats = other.gameObject.GetComponentInParent<EnemyStats>();
                 if (enemyStats != null)
                 {
                     if (isEMP)
                     {
-                        if(enemyStats.isBomber)
+                        if (enemyStats.isBomber)
                         {
                             enemyStats.TakeDamage(10000);
                         }
@@ -97,7 +99,7 @@ public class Projectile : MonoBehaviour, PooledObjects
                 }
             }
             //Debug.Log(other.name);
-            if(!isEMP)
+            if (!isEMP)
             {
                 ShutDown();
             }
