@@ -577,4 +577,15 @@ public class PlayerStats : MonoBehaviour
         gustavModel.SetActive(false);
         bigBombaModel.SetActive(false);
     }
+
+
+    private void OnEnable()
+    {
+        RoomSystem.onRoomCompleted += HealToFull;
+    }
+
+    private void OnDisable()
+    {
+        RoomSystem.onRoomCompleted -= HealToFull;
+    }
 }

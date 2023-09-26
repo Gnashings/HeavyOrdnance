@@ -18,6 +18,8 @@ public class RoomSystem : MonoBehaviour
     private int enemiesKilled;
     [HideInInspector]
     public bool roomCompleted;
+    public delegate void OnRoomCompleted();
+    public static OnRoomCompleted onRoomCompleted;
 
     void Start()
     {
@@ -100,7 +102,7 @@ public class RoomSystem : MonoBehaviour
     */
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             enemiesKilled = 0;
             trigger.enabled = false;
@@ -112,6 +114,7 @@ public class RoomSystem : MonoBehaviour
     private void ReportRoomCompleted()
     {
         roomCompleted = true;
+        onRoomCompleted?.Invoke();
         director.CheckLevelCompletion();
     }
 
@@ -119,20 +122,22 @@ public class RoomSystem : MonoBehaviour
     void ProcEnemyCount()
     {
         enemiesKilled++;
-        UpdateEnemyCounter(enemyCount-enemiesKilled);
+        UpdateEnemyCounter(enemyCount - enemiesKilled);
         //Debug.Log("enemiesKilled " + enemiesKilled + " enemyCount " + enemyCount);
-        if(enemiesKilled == enemyCount)
+        if (enemiesKilled == enemyCount)
         {
             UnlockDoors();
             ReportRoomCompleted();
         }
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         EnemyStats.onDeath += ProcEnemyCount;
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         EnemyStats.onDeath -= ProcEnemyCount;
     }
 
