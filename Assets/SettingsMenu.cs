@@ -15,19 +15,19 @@ public class SettingsMenu : MonoBehaviour
 
     private void SetValues()
     {
-        godModeToggle.isOn = PlayerProgress.godMode;    
+        godModeToggle.isOn = PlayerProgress.godMode;
         laserToggle.isOn = PlayerProgress.sightsOn;
     }
 
     public void SettingsGodMode()
     {
         PlayerProgress.godMode = godModeToggle.isOn;
-        Debug.Log("godmode " + PlayerProgress.godMode);
+        //Debug.Log("godmode " + PlayerProgress.godMode);
     }
 
     public void SettingsSights()
     {
         PlayerProgress.sightsOn = laserToggle.isOn;
-        Debug.Log("sightsOn " + PlayerProgress.sightsOn);
+        //Debug.Log("sightsOn " + PlayerProgress.sightsOn);
     }
 }

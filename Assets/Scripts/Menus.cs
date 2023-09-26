@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class Menus : MonoBehaviour
 {
 
-    void Start ()
+    void Start()
     {
-        if(SceneManager.GetActiveScene().name.Equals("MainMenu"))
+        if (SceneManager.GetActiveScene().name.Equals("MainMenu"))
         {
 
             PlayerProgress.ResetPlayerStats();
         }
-        
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

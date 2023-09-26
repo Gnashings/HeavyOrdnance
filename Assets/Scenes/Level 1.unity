@@ -864,6 +864,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 143326209716718428, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2320578516218032458, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -888,21 +892,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-    - target: {fileID: 4353291376071273427, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
-      propertyPath: m_LocalRotation.x
+    - target: {fileID: 4356461310491211917, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
+      propertyPath: m_WholeNumbers
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4353291376071273427, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4353291376071273427, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-=======
->>>>>>> Stashed changes
     - target: {fileID: 4372594660384948475, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -954,6 +947,10 @@ PrefabInstance:
     - target: {fileID: 4372594661424860515, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423958859263031490, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5890124287337477716, guid: 14841eba92c4c6640a558fffe1d58a7e, type: 3}
       propertyPath: m_AnchorMax.y

@@ -13,10 +13,10 @@ public class EnemyStats : MonoBehaviour
     private float totalHP;
     public Explosion explosion;
     public Explosion gibbedExplosion;
-    
+
     private bool gibbed;
-public delegate void OnDeath();
-public static OnDeath onDeath;
+    public delegate void OnDeath();
+    public static OnDeath onDeath;
     //deligate for when an enemy is killed
 
     void Start()
@@ -29,7 +29,7 @@ public static OnDeath onDeath;
     }
     public void TakeDamage(float damage)
     {
-        if (totalHP+1 < damage)
+        if (totalHP + 1 < damage)
         {
             gibbed = true;
             gameObject.SetActive(false);
@@ -45,11 +45,11 @@ public static OnDeath onDeath;
 
     private void OnDisable()
     {
-        if(isBomber && explosion != null && gibbed == true)
+        if (isBomber && explosion != null && gibbed == true)
         {
             InstaGib();
         }
-        
+
         //delegate call
         onDeath?.Invoke();
     }
@@ -57,13 +57,13 @@ public static OnDeath onDeath;
     private void InstaGib()
     {
         gibbedExplosion.Explode();
-        print("GIBBED");       
+        //print("GIBBED");
     }
 
     public void BombPlayer()
     {
         TakeDamage(health);
         explosion.Explode();
-        print("KILLED SELF");       
+        //print("KILLED SELF");
     }
 }

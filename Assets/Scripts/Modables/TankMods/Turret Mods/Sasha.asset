@@ -20,3 +20,4 @@ MonoBehaviour:
   explosiveProjectile: 0
   destroysOtherShots: 0
   fireFX: {fileID: 3005065311170345269, guid: f923c3460ee2ed24c9c26fcf93be30ab, type: 3}
+  hideUI: 1

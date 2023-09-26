@@ -31,7 +31,7 @@ public class PlayerInputControls : MonoBehaviour
 
         LockMouse();
 
-        if(Gamepad.current != null)
+        if (Gamepad.current != null)
         {
             gamePadMode = true;
         }
@@ -78,7 +78,7 @@ public class PlayerInputControls : MonoBehaviour
             if (context.interaction is HoldInteraction)
             {
                 isHeld = true;
-            }         
+            }
         };
 
         return isHeld;
@@ -102,11 +102,11 @@ public class PlayerInputControls : MonoBehaviour
         currentRotation.x += look.ReadValue<Vector2>().x * sensitivity;
         currentRotation.y -= look.ReadValue<Vector2>().y * sensitivity;
         currentRotation.x = Mathf.Repeat(currentRotation.x, 360);
-        currentRotation.y = Mathf.Clamp(currentRotation.y, -maxYAngle, maxYAngle); 
+        currentRotation.y = Mathf.Clamp(currentRotation.y, -maxYAngle, maxYAngle);
         return currentRotation;
     }
     public LayerMask lay;
-    public(bool success, Vector3 position)  MouseLookAxis()
+    public (bool success, Vector3 position) MouseLookAxis()
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         Debug.Log(ray + "RAY");
@@ -117,7 +117,7 @@ public class PlayerInputControls : MonoBehaviour
         }
         else
             Debug.Log("FAILURE STAGE ONE");
-            return (success: false, position: Vector3.zero);
+        return (success: false, position: Vector3.zero);
     }
 
 
@@ -130,12 +130,12 @@ public class PlayerInputControls : MonoBehaviour
         //layerMask = ~layerMask;
         if (Physics.Raycast(rayOrigin, out hitInfo, Mathf.Infinity, layerMask))
         {
-            Debug.Log("Raycast hit object " + hitInfo.transform.name + " at the position of " + hitInfo.transform.position);
-            //MeshRenderer renderer = hitInfo.transform.GetComponent<MeshRenderer>();
-            return  hitInfo.point;
+            //Debug.Log("Raycast hit object " + hitInfo.transform.name + " at the position of " + hitInfo.transform.position);
+
+            return hitInfo.point;
         }
-        return  hitInfo.point;
-        
+        return hitInfo.point;
+
     }
 
     public void UnlockMouse()
@@ -156,7 +156,7 @@ public class PlayerInputControls : MonoBehaviour
     float heading;
     public float GetPadLookAxis()
     {
-        if (look.ReadValue<Vector2>().x!=0 && look.ReadValue<Vector2>().y !=0)
+        if (look.ReadValue<Vector2>().x != 0 && look.ReadValue<Vector2>().y != 0)
         {
             return heading = Mathf.Atan2(look.ReadValue<Vector2>().x, look.ReadValue<Vector2>().y);
         }

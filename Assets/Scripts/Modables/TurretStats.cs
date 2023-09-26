@@ -12,4 +12,5 @@ public class TurretStats : ScriptableObject
     public bool explosiveProjectile;
     public bool destroysOtherShots;
     public GameObject fireFX;
+    public bool hideUI;
 }

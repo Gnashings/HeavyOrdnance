@@ -12,18 +12,35 @@ public class PlayerUI : MonoBehaviour
     private PlayerInputControls playerInputs;
     public Slider health;
     public Slider armor;
+    public Slider reload;
     public Canvas pauseMenu;
     public TMP_Text armorText;
+
     void Start()
     {
         player = GameObject.Find("Player");
         playerStats = player.GetComponent<PlayerStats>();
         playerInputs = player.GetComponent<PlayerInputControls>();
+
+        //health
         health.maxValue = playerStats.totalHealth;
         health.value = playerStats.health;
+
+        //armor
         armor.maxValue = playerStats.totalArmor;
         armor.value = playerStats.armor;
         armorText.text = playerStats.totalArmor.ToString();
+
+        //reload
+        reload.maxValue = 1f;
+        reload.value = reload.maxValue;
+        reload.handleRect.gameObject.SetActive(true);
+
+        if (PlayerProgress.hideGunReload == true)
+        {
+            reload.gameObject.SetActive(false);
+            Debug.Log("Hiding UI");
+        }
     }
 
     // Update is called once per frame
@@ -32,14 +49,22 @@ public class PlayerUI : MonoBehaviour
         armor.value = playerStats.armor;
         health.value = playerStats.health;
         armorText.text = armor.value.ToString();
-        if(playerInputs.paused)
+        if (playerInputs.paused)
         {
-            if(pauseMenu.enabled)
+            if (pauseMenu.enabled)
             {
                 GameUnpause();
             }
             else GamePause();
         }
+        if (PlayerProgress.hideGunReload == false)
+        {
+            if (reload.value < reload.maxValue)
+            {
+                FillReloadBar();
+            }
+        }
+
     }
 
     private void GamePause()
@@ -66,8 +91,44 @@ public class PlayerUI : MonoBehaviour
         playerInputs.UnlockMouse();
         SceneManager.LoadScene("MainMenu");
     }
+
     public void Quit()
     {
         Application.Quit();
     }
+
+    void TriggerReloadBar(float timer)
+    {
+        reload.minValue = Time.time;
+        reload.maxValue = Time.time + timer;
+        reload.handleRect.gameObject.SetActive(false);
+
+    }
+
+    void FillReloadBar()
+    {
+        reload.value = Time.time;
+        if (reload.value >= reload.maxValue)
+        {
+            reload.handleRect.gameObject.SetActive(true);
+        }
+    }
+
+    public void OnEnable()
+    {
+        if (PlayerProgress.hideGunReload == false)
+        {
+            FireGun.reloadGun += TriggerReloadBar;
+        }
+
+    }
+
+    public void OnDisable()
+    {
+        if (PlayerProgress.hideGunReload == false)
+        {
+            FireGun.reloadGun -= TriggerReloadBar;
+        }
+    }
+
 }

@@ -21,12 +21,15 @@ public class FireGun : MonoBehaviour
     private bool canFire;
     private float accuracy;
     private string bulletType;
-    
+
     //shockwave stuff
     private bool canSecondaryFire;
     private float secondaryVelocity;
     private float secondaryCooldown;
     private string secondaryBulletType;
+
+    public delegate void ReloadGun(float timer);
+    public static ReloadGun reloadGun;
 
     void Start()
     {
@@ -42,7 +45,7 @@ public class FireGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PlayerProgress.paused)
+        if (!PlayerProgress.paused)
         {
             CheckCanFire();
         }
@@ -52,16 +55,17 @@ public class FireGun : MonoBehaviour
     {
         if (inputs.IsFireHeld() == true && canFire)
         {
-            
+
             if (firingCooldown != 0)
             {
-                
+
                 canFire = false;
                 Fire();
                 StartCoroutine(StartCooldown());
+                reloadGun?.Invoke(firingCooldown);
             }
         }
-        if(PlayerProgress.curGadgets != null && PlayerProgress.curGadgets.Equals("Shockwave"))
+        if (PlayerProgress.curGadgets != null && PlayerProgress.curGadgets.Equals("Shockwave"))
         {
             if (inputs.gadgetStart == true && canSecondaryFire == true)
             {

@@ -130,6 +130,126 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 845441419, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: defBody
+      value: 
+      objectReference: {fileID: 11400000, guid: 3342a8e27b462304b89a5e7d21446b94, type: 2}
+    - target: {fileID: 845441419, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: defTrack
+      value: 
+      objectReference: {fileID: 11400000, guid: a372af456a926cf4aadea6b60b880622, type: 2}
+    - target: {fileID: 845441419, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: defTurret
+      value: 
+      objectReference: {fileID: 11400000, guid: 26a24a5b3f2db8142a3c283d56db796a, type: 2}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1479969700}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: LoadTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PlayerSelection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: f487dc1b1c0be8c469e610fa9c166125, type: 2}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474104386048, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TurretStats, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1479969700}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: LoadTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PlayerSelection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: a040ec2788640a34ea01ffde0e0803ce, type: 2}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181474806184219, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TurretStats, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1479969700}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: LoadTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PlayerSelection, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: b95ff4a1adb4c6c4d8d56d7f6ce6ef96, type: 2}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 545181475499323141, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TurretStats, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 545181475615207165, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
       propertyPath: m_Text
       value: 'Choose
@@ -402,6 +522,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1479969700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 845441419, guid: 204b920ba4e0a524f93f19d24e09b81f, type: 3}
+  m_PrefabInstance: {fileID: 149283868}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d48a87261838954a80abb588ea70f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1650412517
 GameObject:
   m_ObjectHideFlags: 0

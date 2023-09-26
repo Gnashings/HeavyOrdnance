@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public static class PlayerProgress 
+public static class PlayerProgress
 {
     public static bool hasTurret;
     public static bool hasBody;
@@ -19,14 +20,27 @@ public static class PlayerProgress
     public static bool death;
     public static float roidDmgMod;
 
+    //UI changes
+    public static bool hideGunReload;
+    //TODO change to this
+    public static TurretStats turretInfo;
+
     //options
     public static bool godMode;
     public static bool sightsOn;
     public static float vol;
+
     public static void SetTurret(string selection)
     {
         curTurret = selection;
         hasTurret = true;
+    }
+
+    public static void SetTurretStats(TurretStats selection)
+    {
+        turretInfo = selection;
+        hideGunReload = selection.hideUI;
+        Debug.Log(hideGunReload + " " + SceneManager.GetActiveScene().name);
     }
 
     public static void SetBody(string selection)
@@ -59,11 +73,11 @@ public static class PlayerProgress
     public static bool ChoseAbility()
     {
         bool hasAbility = false;
-        if(hasTurret)
+        if (hasTurret)
         {
             hasAbility = true;
         }
-        if(hasBody)
+        if (hasBody)
         {
             hasAbility = true;
         }
@@ -92,6 +106,10 @@ public static class PlayerProgress
         death = false;
 
         levelsCompleted = 0;
+
+        //UI RESETS
+        hideGunReload = false;
+
         Debug.Log("all stats resets");
     }
 }

@@ -85,9 +85,9 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        if(!PlayerProgress.paused)
+        if (!PlayerProgress.paused)
         {
-            if(PlayerProgress.curGadgets != null && PlayerProgress.curGadgets.Equals("Steroid"))
+            if (PlayerProgress.curGadgets != null && PlayerProgress.curGadgets.Equals("Steroid"))
             {
                 if (input.gadgetStart && !enraged)
                 {
@@ -133,7 +133,7 @@ public class PlayerStats : MonoBehaviour
             armorRecharge = noBodyMod.armorRecharge;
             armorBreakTimer = noBodyMod.armorBreakTimer;
             canBomba = false;
-            
+
         }
 
         //Big Bomba
@@ -145,7 +145,7 @@ public class PlayerStats : MonoBehaviour
             armorRecharge = bigBomba.armorRecharge;
             armorBreakTimer = bigBomba.armorBreakTimer;
             canBomba = true;
-            
+
         }
 
         //Gustav
@@ -158,12 +158,12 @@ public class PlayerStats : MonoBehaviour
             canBomba = false;
             armorRecharge = gustav.armorRecharge;
             armorBreakTimer = gustav.armorBreakTimer;
-            
+
             //failsafe gustav ability
             if (hasGustavAbility)
             {
                 if (gustavArmorReduction <= 0)
-                    gustavArmorReduction = 3;  
+                    gustavArmorReduction = 3;
                 else
                     flatDR = gustavArmorReduction;
             }
@@ -184,16 +184,16 @@ public class PlayerStats : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Enemy") && canBomba)
+        if (collision.collider.CompareTag("Enemy") && canBomba)
         {
-            if(canBomba == true)
+            if (canBomba == true)
             {
                 canBomba = false;
                 bigBombaBomb.Explode();
                 //Debug.Log("bombabomb");
                 StartCoroutine(BombaCooldown());
             }
-        }    
+        }
     }
     IEnumerator BombaCooldown()
     {
@@ -216,14 +216,14 @@ public class PlayerStats : MonoBehaviour
 
     private void CheckTurretMods()
     {
-        
+
         if (turrets.HasFlag(TurretMods.noMod))
         {
-            firegun.SetGunValues(   noGunMod.fireRate,
+            firegun.SetGunValues(noGunMod.fireRate,
                                     noGunMod.bulletVelocity,
                                     noGunMod.bulletSpread,
                                     "NormalShot");
-            
+
         }
         if (turrets.HasFlag(TurretMods.riskyBusiness))
         {
@@ -238,7 +238,7 @@ public class PlayerStats : MonoBehaviour
                                     sasha.bulletVelocity,
                                     sasha.bulletSpread,
                                     "Sasha");
-            
+
         }
         if (turrets.HasFlag(TurretMods.newtonsApple))
         {
@@ -246,7 +246,7 @@ public class PlayerStats : MonoBehaviour
                                     newtonsApple.bulletVelocity,
                                     newtonsApple.bulletSpread,
                                     "Newtons");
-            
+
         }
     }
 
@@ -355,7 +355,7 @@ public class PlayerStats : MonoBehaviour
             {
                 Die();
             }
-        }    
+        }
 
     }
 
@@ -367,7 +367,7 @@ public class PlayerStats : MonoBehaviour
     private float GustavArmorCalculations(float damage)
     {
         //print("Damage Before: " + damage);
-        if(damage <= 15)
+        if (damage <= 15)
         {
             damage -= flatDR;
         }
@@ -389,11 +389,11 @@ public class PlayerStats : MonoBehaviour
 
     IEnumerator ArmorRecharge()
     {
-        while(true)
+        while (true)
         {
             if (armor < totalArmor)
             {
-                if(canRecharge == false)
+                if (canRecharge == false)
                 {
                     yield return null;
                 }
@@ -406,7 +406,7 @@ public class PlayerStats : MonoBehaviour
                 yield return null;
             }
         }
-        
+
     }
     private void SetHealthAndArmor()
     {
@@ -567,7 +567,7 @@ public class PlayerStats : MonoBehaviour
             //todo
         }
     }
-    
+
     private void UnloadModels()
     {
         basicTurretModal.SetActive(false);

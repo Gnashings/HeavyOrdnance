@@ -10,11 +10,17 @@ public class PlayerSelection : MonoBehaviour
     public GameObject tracks;
     public GameObject gadgets;
 
+    public TurretStats defTurret;
+    public BodyStats defBody;
+    public TrackStats defTrack;
+
     private string selection;
     private bool choseTurret;
     private bool choseBody;
     private bool choseTracks;
     private bool choseGadget;
+
+    private TurretStats turretStats;
 
     void Start()
     {
@@ -26,28 +32,35 @@ public class PlayerSelection : MonoBehaviour
 
     public void TurretSelection(string thisString)
     {
-        selection   = thisString;
+        selection = thisString;
         choseTurret = true;
-        choseBody   = false;
+        choseBody = false;
         choseTracks = false;
         choseGadget = false;
         //print("turret " + thisString);
     }
 
+    //CLEANER FUNCTION
+    public void LoadTurret(TurretStats currentTurret)
+    {
+        turretStats = currentTurret;
+
+    }
+
     public void BodySelection(string thisString)
     {
-        selection   = thisString;
+        selection = thisString;
         choseTurret = false;
-        choseBody   = true;
+        choseBody = true;
         choseTracks = false;
         choseGadget = false;
         //print("body " + thisString);
     }
     public void TrackSelection(string thisString)
     {
-        selection   = thisString;
+        selection = thisString;
         choseTurret = false;
-        choseBody   = false;
+        choseBody = false;
         choseTracks = true;
         choseGadget = false;
         //print("track " + thisString);
@@ -55,9 +68,9 @@ public class PlayerSelection : MonoBehaviour
 
     public void GadgetSelection(string thisString)
     {
-        selection   = thisString;
+        selection = thisString;
         choseTurret = false;
-        choseBody   = false;
+        choseBody = false;
         choseTracks = false;
         choseGadget = true;
         //print("track " + thisString);
@@ -65,15 +78,16 @@ public class PlayerSelection : MonoBehaviour
 
     public void PlayGame()
     {
-        if(choseTurret == true)
+        if (choseTurret == true)
         {
             PlayerProgress.SetTurret(selection);
+            PlayerProgress.SetTurretStats(turretStats);
         }
-        if(choseBody == true)
+        if (choseBody == true)
         {
             PlayerProgress.SetBody(selection);
         }
-        if(choseTracks == true)
+        if (choseTracks == true)
         {
             PlayerProgress.SetTracks(selection);
         }
@@ -81,10 +95,7 @@ public class PlayerSelection : MonoBehaviour
         {
             PlayerProgress.SetGadget(selection);
         }
-        //DEBUG: SceneManager.LoadScene("Menu");
         DetermineLevel();
-        //LIVE: SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 
     public void MainMenu()
@@ -94,9 +105,13 @@ public class PlayerSelection : MonoBehaviour
 
     private void CheckChoices()
     {
-        if(PlayerProgress.hasTurret == true)
+        if (PlayerProgress.hasTurret == true)
         {
             turret.SetActive(false);
+        }
+        else
+        {
+            PlayerProgress.SetTurretStats(defTurret);
         }
 
         if (PlayerProgress.hasBody == true)
@@ -117,7 +132,7 @@ public class PlayerSelection : MonoBehaviour
 
     private void DetermineLevel()
     {
-        if(PlayerProgress.levelsCompleted == 0)
+        if (PlayerProgress.levelsCompleted == 0)
         {
             SceneManager.LoadScene("Level 1");
         }
