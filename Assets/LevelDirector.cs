@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelDirector : MonoBehaviour
 {
-    
+
     //[HideInInspector]
     public List<RoomSystem> rooms = new List<RoomSystem>();
     public bool roomsCompleted;
@@ -14,7 +14,7 @@ public class LevelDirector : MonoBehaviour
     {
         //sets the current level for the level reset.
         PlayerProgress.curLevel = SceneManager.GetActiveScene().name.ToString();
-        
+
         if (rooms.Count != 0)
         {
             Debug.LogWarning("Keep the room list to zero in the director script, this is a readonly field.");
@@ -28,7 +28,7 @@ public class LevelDirector : MonoBehaviour
 
     private void Update()
     {
-        if(PlayerProgress.death == true)
+        if (PlayerProgress.death == true)
         {
             SceneManager.LoadScene("LoseScene");
         }
@@ -52,12 +52,13 @@ public class LevelDirector : MonoBehaviour
             else
                 roomsCompleted = true;
         }
-        if(roomsCompleted == true)
+        if (roomsCompleted == true && PlayerProgress.death == false)
         {
             PlayerProgress.levelsCompleted++;
+            Debug.Log("PlayerProgress.levelsCompleted");
             if (PlayerProgress.levelsCompleted == 4)
             {
-                
+
                 if (PlayerProgress.ChoseAbility() == false)
                 {
                     SceneManager.LoadScene("WinScene2");
@@ -66,15 +67,15 @@ public class LevelDirector : MonoBehaviour
                 {
                     SceneManager.LoadScene("WinScene");
                 }
-                
+
             }
             else
             {
                 StartCoroutine(levelTimeout());
-                
+
             }
-                
-            
+
+
         }
     }
 
