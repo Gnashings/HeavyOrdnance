@@ -7,7 +7,10 @@ public class CameraFollow : MonoBehaviour
     public GameObject player;
     private Vector3 offset;
     private Vector3 newtrans;
+    public AnimationCurve curve;
+    public float shakeDuration = 1f;
 
+    private bool isShaking;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +25,47 @@ public class CameraFollow : MonoBehaviour
         newtrans.x = player.transform.position.x + offset.x;
         newtrans.z = player.transform.position.z + offset.z;
         transform.position = newtrans;
+    }
+
+    void Update()
+    {
+
+    }
+
+    IEnumerator CamShake()
+    {
+        Vector3 startPosition = transform.position;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < shakeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float strength = curve.Evaluate(elapsedTime / shakeDuration);
+            newtrans = startPosition + Random.insideUnitSphere;
+            yield return null;
+        }
+
+        transform.position = startPosition;
+    }
+
+    void ShakeThatCam()
+    {
+        if (isShaking == false)
+        {
+            StartCoroutine(CamShake());
+        }
+
+
+
+    }
+
+    void OnEnable()
+    {
+        EnemyStats.onDeath += ShakeThatCam;
+    }
+
+    void OnDisable()
+    {
+        EnemyStats.onDeath -= ShakeThatCam;
     }
 }

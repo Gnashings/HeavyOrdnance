@@ -13,6 +13,7 @@ public class EnemyStats : MonoBehaviour
     private float totalHP;
     public Explosion explosion;
     public Explosion gibbedExplosion;
+    public GameObject deathExplosionFX;
 
     private bool gibbed;
     public delegate void OnDeath();
@@ -49,7 +50,10 @@ public class EnemyStats : MonoBehaviour
         {
             InstaGib();
         }
-
+        if (isBomber == false)
+        {
+            explosion.Explode();
+        }
         //delegate call
         onDeath?.Invoke();
     }
@@ -64,6 +68,5 @@ public class EnemyStats : MonoBehaviour
     {
         TakeDamage(health);
         explosion.Explode();
-        //print("KILLED SELF");
     }
 }

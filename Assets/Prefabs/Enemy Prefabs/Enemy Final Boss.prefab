@@ -44,7 +44,22 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 0401ee9cba586f94cb3e4e9e040c183f, type: 2}
   health: 2000
   isBomber: 0
-  explosion: {fileID: 0}
+  explosion: {fileID: 3482134531078027559}
+  gibbedExplosion: {fileID: 0}
+  deathExplosionFX: {fileID: 0}
+--- !u!114 &3482134531078027559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755308313323082410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382458088d94f2541bc2380e4f91431c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 11400000, guid: 8dab5e85f0c13c14698f1aafde7042ca, type: 2}
 --- !u!1 &3079547412257091081
 GameObject:
   m_ObjectHideFlags: 0

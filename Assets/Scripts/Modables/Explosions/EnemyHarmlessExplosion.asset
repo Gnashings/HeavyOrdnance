@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188c592afb70a094ebe82fe6e2428cd7, type: 3}
+  m_Name: EnemyHarmlessExplosion
+  m_EditorClassIdentifier: 
+  radius: 9
+  force: 0
+  damage: 0
+  upwardforce: 0
+  particles: {fileID: 1680070425851635562, guid: dded4e2c3938b06428ebcf39a14fac15, type: 3}
+  canDamagePlayer: 0
+  canAffectPlayer: 0
+  canDamageEnemies: 0
+  canAffectEnemies: 0

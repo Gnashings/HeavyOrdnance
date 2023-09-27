@@ -10,22 +10,22 @@ public class Explosion : MonoBehaviour
     public ExplosionParameters explosion;
 
     public void Explode()
-    {   
+    {
         ParticleSystem fx;
-        if(explosion.particles != null)
+        if (explosion.particles != null)
         {
             //parent
             float r = explosion.radius;
             ParticleSystem.ShapeModule ps = explosion.particles.GetComponent<ParticleSystem>().shape;
             ps.radius = r;
-            
+
             //child
             float rc = explosion.radius;
             ParticleSystem.ShapeModule psc = explosion.particles.transform.GetChild(0).GetComponent<ParticleSystem>().shape;
-            psc.radius = rc*0.25f;
+            psc.radius = rc * 0.25f;
             Instantiate(explosion.particles, transform.position, transform.rotation);
         }
-        
+
         Physics.OverlapSphere(transform.position, explosion.radius);
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosion.radius);
 
@@ -54,20 +54,20 @@ public class Explosion : MonoBehaviour
         {
             if (other.tag.Equals("Mine"))
             {
-                rb.AddExplosionForce(25 , other.ClosestPoint(gameObject.transform.position), 10, 2, ForceMode.VelocityChange);
+                rb.AddExplosionForce(25, other.ClosestPoint(gameObject.transform.position), 10, 2, ForceMode.VelocityChange);
             }
         }
     }
 
     private void DamageTargets(Collider other)
     {
-        if(explosion.canDamageEnemies && other.CompareTag("Enemy"))
+        if (explosion.canDamageEnemies && other.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<EnemyStats>().TakeDamage(explosion.damage * (1 + PlayerProgress.roidDmgMod));
         }
-        if(explosion.canDamagePlayer && other.CompareTag("Player"))
+        if (explosion.canDamagePlayer && other.CompareTag("Player"))
         {
-            other.gameObject.GetComponentInParent<PlayerStats>().TakeDamage(explosion.damage);     
+            other.gameObject.GetComponentInParent<PlayerStats>().TakeDamage(explosion.damage);
         }
     }
 

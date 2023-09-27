@@ -9770,6 +9770,7 @@ MonoBehaviour:
   isBomber: 1
   explosion: {fileID: 8365247258113469917}
   gibbedExplosion: {fileID: 2175849135218181824}
+  deathExplosionFX: {fileID: 1680070425851635562, guid: dded4e2c3938b06428ebcf39a14fac15, type: 3}
 --- !u!114 &8365247258113469917
 MonoBehaviour:
   m_ObjectHideFlags: 0
