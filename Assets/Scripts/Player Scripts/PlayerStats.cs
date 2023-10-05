@@ -537,7 +537,8 @@ public class PlayerStats : MonoBehaviour
         //Gadget
         if (PlayerProgress.hasGadgets == false)
         {
-            gadgets = GadgetMods.noMod;
+            //gadgets = GadgetMods.noMod;
+            gadgets = GadgetMods.mineBomb;
         }
         else
         {
@@ -545,16 +546,17 @@ public class PlayerStats : MonoBehaviour
             {
                 gadgets = GadgetMods.shockwave;
             }
-            if (PlayerProgress.curGadgets.Equals("Mine"))
-            {
-                gadgets = GadgetMods.mineBomb;
-            }
+            //MINE IS BASELINE BABYYYY
+            //if (PlayerProgress.curGadgets.Equals("Mine"))
+            //{
+            //}
             if (PlayerProgress.curGadgets.Equals("Steroid"))
             {
                 gadgets = GadgetMods.steroid;
             }
         }
     }
+
     public enum GadgetMods
     {
         noMod,

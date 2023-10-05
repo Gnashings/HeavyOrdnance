@@ -17,11 +17,10 @@ public class MineAbility : MonoBehaviour
         outMine = null;
         canActivate = true;
 
-        if (PlayerProgress.curGadgets == null || !PlayerProgress.curGadgets.Equals("Mine"))
-        {
-            this.enabled = false;
-        }
-
+        //if (PlayerProgress.curGadgets == null || !PlayerProgress.curGadgets.Equals("Mine"))
+        //{
+        //    this.enabled = false;
+        //}
     }
 
     void Update()
@@ -51,7 +50,6 @@ public class MineAbility : MonoBehaviour
         else if (inputs.gadgetStart == true && mineOut && outMine != null)
         {
             outMine.GetComponent<Mine>().Detonate();
-            //print("DETONATING");
             mineOut = false;
             StartCoroutine(Cooldown());
         }
