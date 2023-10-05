@@ -16,16 +16,17 @@ public class MineAbility : MonoBehaviour
     {
         outMine = null;
         canActivate = true;
-        if (PlayerProgress.curGadgets==null || !PlayerProgress.curGadgets.Equals("Mine"))
+
+        if (PlayerProgress.curGadgets == null || !PlayerProgress.curGadgets.Equals("Mine"))
         {
             this.enabled = false;
         }
-        
+
     }
 
     void Update()
     {
-        if(!PlayerProgress.paused)
+        if (!PlayerProgress.paused)
         {
             LayMines();
         }
@@ -42,12 +43,12 @@ public class MineAbility : MonoBehaviour
                 Quaternion firingDirection = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 0));
                 bombInstance = Instantiate(mine, mineSpawn.transform.position, firingDirection) as GameObject;
                 Rigidbody bombRB = bombInstance.GetComponent<Rigidbody>();
-                bombRB.AddForce(gameObject.transform.TransformDirection(0, 1, -1f) * 300f);
+                bombRB.AddForce(gameObject.transform.TransformDirection(0, 0f, -0f) * 300f);
                 outMine = bombInstance;
             }
             mineOut = true;
         }
-        else if(inputs.gadgetStart == true && mineOut && outMine != null)
+        else if (inputs.gadgetStart == true && mineOut && outMine != null)
         {
             outMine.GetComponent<Mine>().Detonate();
             //print("DETONATING");

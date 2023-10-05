@@ -12,12 +12,12 @@ public class TankBodyController : MonoBehaviour
     public Rigidbody rb;
     public float acceleration;
     public float speed;
-    
     public float rotationSpeed;
     [HideInInspector]
     public float topSpeed;
-    
+    public float gravityScale;
     public bool ignoreAcceleration;
+    public BoxCollider boxCollider;
     private bool countingSlow;
 
     [Header("Slow Debuff")]
@@ -35,23 +35,28 @@ public class TankBodyController : MonoBehaviour
     [HideInInspector]
     public bool slowImmune;
     public float backPenalty;
-    
+    private bool grounded;
     void Start()
     {
         inputs = gameObject.GetComponent<PlayerInputControls>();
         rb = gameObject.GetComponentInChildren<Rigidbody>();
         speed = 0;
-        if(roidDebuffAmount == 0)
+        if (roidDebuffAmount == 0)
         {
             roidDebuffAmount = 1;
         }
     }
-    
+
     private void FixedUpdate()
     {
+        if (rb.velocity.y >= 1)
+        {
+            rb.AddForce(Physics.gravity * gravityScale * Time.fixedDeltaTime, ForceMode.Acceleration);
+        }
+
         if (isSlowed)
         {
-            if(!countingSlow)
+            if (!countingSlow)
             {
                 StartCoroutine(SlowTimer());
             }
@@ -59,7 +64,20 @@ public class TankBodyController : MonoBehaviour
         Move();
         Rotate();
     }
-    
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.collider.gameObject.layer == 3)
+        {
+            //grounded = true;
+        }
+    }
+
+    private void Gravity()
+    {
+
+    }
+
     private void Move()
     {
         if (inputs.GetPadMoveForwardAxis().magnitude == 0)
@@ -73,7 +91,7 @@ public class TankBodyController : MonoBehaviour
         {
             CalculateMovementSpeed();
         }
-  
+
     }
 
     private void CalculateMovementSpeed()
@@ -111,12 +129,12 @@ public class TankBodyController : MonoBehaviour
         {
             return 1;
         }
-        if(slowAmount < 0)
+        if (slowAmount < 0)
         {
             Debug.LogWarning("slowAmount is below 0, please set higher");
             return 1;
         }
-        if(slowAmount > 1)
+        if (slowAmount > 1)
         {
             Debug.LogWarning("slowAmount is over 1, please set lower");
             return 1;

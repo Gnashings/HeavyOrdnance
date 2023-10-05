@@ -19,6 +19,7 @@ public class PlayerStats : MonoBehaviour
     private bool canRecharge;
     private float flatDR;
 
+    public bool abilityOverride;
     [Header("Body Abilities")]
     public BodyMods bodyMods;
     public float bombaCooldown;
@@ -67,6 +68,10 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         UnloadModels();
+        if (abilityOverride == false)
+        {
+
+        }
         LoadPlayerSettings();
         ResetAllStats();
         CheckBodyMod();
@@ -272,9 +277,9 @@ public class PlayerStats : MonoBehaviour
             tankbody.slowImmune = nuclearWinter.ignoreSlow;
             tankbody.acceleration = nuclearWinter.acceleration;
             tankbody.rotationSpeed = nuclearWinter.turningSpeed;
-            tankbody.rb.mass = 100;
-            tankbody.rb.drag = 4;
-            tankbody.rb.angularDrag = 3;
+            tankbody.rb.mass = 3;
+            tankbody.rb.drag = 3;
+            tankbody.rb.angularDrag = 2;
         }
         if (tracks.HasFlag(TrackMods.hare))
         {
@@ -451,6 +456,13 @@ public class PlayerStats : MonoBehaviour
 
     private void LoadPlayerSettings()
     {
+        if (abilityOverride == true)
+        {
+            basicTurretModal.SetActive(true);
+            basicBodyModel.SetActive(true);
+            CheckGadgetMods();
+            return;
+        }
         //turret
         if (PlayerProgress.hasTurret == false)
         {

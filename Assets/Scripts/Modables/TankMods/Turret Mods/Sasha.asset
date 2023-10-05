@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 0.05
   bulletVelocity: 6000
-  bulletSpread: 0.05
+  bulletSpread: 0.25
   damage: 15
   dealDamage: 1
   explosiveProjectile: 0

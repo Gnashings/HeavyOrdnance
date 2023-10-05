@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188c592afb70a094ebe82fe6e2428cd7, type: 3}
   m_Name: Big Bomba
   m_EditorClassIdentifier: 
-  radius: 40
+  radius: 25
   force: 25
   damage: 200
   upwardforce: 1

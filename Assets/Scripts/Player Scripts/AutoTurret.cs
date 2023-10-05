@@ -21,7 +21,7 @@ public class AutoTurret : MonoBehaviour
         canDamage = true;
         particlesfx.Stop();
         autoGunAudio.clip = audioShots[Random.Range(0, audioShots.Count)];
-        light.SetActive(false);
+        //light.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
@@ -49,7 +49,7 @@ public class AutoTurret : MonoBehaviour
             {
                 particlesfx.Stop();
                 cooldown = originalCooldown;
-                light.SetActive(false);
+                //light.SetActive(false);
             }
 
         }
@@ -68,7 +68,7 @@ public class AutoTurret : MonoBehaviour
         }
 
         Debug.Log(cooldown + " CD speed");
-        light.SetActive(true);
+        //light.SetActive(true);
         canDamage = true;
     }
 

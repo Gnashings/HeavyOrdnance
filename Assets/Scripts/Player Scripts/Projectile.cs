@@ -10,6 +10,8 @@ public class Projectile : MonoBehaviour, PooledObjects
 
     public float killOffTimer;
     public GameObject effects;
+    public GameObject missedHitEffect;
+    public GameObject confirmedHitEffect;
     public SphereCollider exp;
     public Rigidbody rb;
     [Header("Explosive effects")]
@@ -94,9 +96,17 @@ public class Projectile : MonoBehaviour, PooledObjects
                         }
                     }
                     else
+                    {
                         enemyStats.TakeDamage(damage + (damage * PlayerProgress.roidDmgMod));
+                        Instantiate(confirmedHitEffect, transform.position, transform.rotation);
+                    }
+
                     //Debug.Log(" HIT " + other.tag + " FOR: " + damage + " PRG");
                 }
+            }
+            else
+            {
+                Instantiate(missedHitEffect, transform.position, transform.rotation);
             }
             //Debug.Log(other.name);
             if (!isEMP)

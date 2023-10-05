@@ -103,6 +103,8 @@ MonoBehaviour:
   shotSound: {fileID: 3493382173483983313}
   killOffTimer: 4
   effects: {fileID: 0}
+  missedHitEffect: {fileID: 4880560976839256125, guid: e8c01e3745b0645479decc761cc4517a, type: 3}
+  confirmedHitEffect: {fileID: 4010910696176670365, guid: bc3d1046b77a2ff4e93c309a9a834cbe, type: 3}
   exp: {fileID: 1248091766568693480}
   rb: {fileID: 470601769898302904}
   explosion: {fileID: 1830697642702009027}
