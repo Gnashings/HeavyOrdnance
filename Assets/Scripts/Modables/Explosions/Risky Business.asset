@@ -15,7 +15,7 @@ MonoBehaviour:
   radius: 25
   force: 25
   damage: 75
-  upwardforce: -0.24
+  upwardforce: 1
   particles: {fileID: 1680070425851635562, guid: e54969b1ed732494cbcdca8d81f21481, type: 3}
   canDamagePlayer: 0
   canAffectPlayer: 1
