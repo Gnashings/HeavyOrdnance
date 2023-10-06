@@ -316,7 +316,7 @@ public class PlayerStats : MonoBehaviour
     #region ArmorAndHealth
     public void TakeDamage(float damage)
     {
-        ProcSlow();
+        //ProcSlow();
         if (armor > 0)
         {
             //check for damage reduciton
