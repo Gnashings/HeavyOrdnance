@@ -58,7 +58,7 @@ public class MineAbility : MonoBehaviour
     private IEnumerator Cooldown()
     {
         canActivate = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(abilityCD);
         canActivate = true;
     }
 }
