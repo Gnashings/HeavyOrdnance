@@ -15066,7 +15066,7 @@ MonoBehaviour:
   inputs: {fileID: 7280919474109410467}
   mine: {fileID: 5846489631836927078, guid: a4d0640f5f8d0b847a97fc3489ca5fe1, type: 3}
   mineSpawn: {fileID: 1024910738}
-  abilityCD: 0
+  abilityCD: 3
 --- !u!114 &7280919474109410467
 MonoBehaviour:
   m_ObjectHideFlags: 0
