@@ -479,6 +479,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1977ca062d056ed4a9fb40a3980b0a4d, type: 2}
     - target: {fileID: 919132149155446097, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
       propertyPath: m_Name
       value: Proxy TurretStationary Base

@@ -90,9 +90,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f7580b89ca332444a8f2044ef00d4632, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f7580b89ca332444a8f2044ef00d4632, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ec63c896f1d5dac408ffe38c120af39a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f7580b89ca332444a8f2044ef00d4632, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1977ca062d056ed4a9fb40a3980b0a4d, type: 2}
     - target: {fileID: 919132149155446097, guid: f7580b89ca332444a8f2044ef00d4632, type: 3}
       propertyPath: m_Name
       value: rock tall cover Variant

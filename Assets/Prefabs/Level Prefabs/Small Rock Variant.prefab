@@ -97,9 +97,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a06b78c512d272648b5942ff90d434a6, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a06b78c512d272648b5942ff90d434a6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 91a28ced25e22bc488e5b45b3d95bbec, type: 2}
+    - target: {fileID: -7511558181221131132, guid: a06b78c512d272648b5942ff90d434a6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1977ca062d056ed4a9fb40a3980b0a4d, type: 2}
     - target: {fileID: 919132149155446097, guid: a06b78c512d272648b5942ff90d434a6, type: 3}
       propertyPath: m_Name
       value: Small Rock Variant

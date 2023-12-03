@@ -9913,6 +9913,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2822639755269671151, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2822639755269671151, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1977ca062d056ed4a9fb40a3980b0a4d, type: 2}
     - target: {fileID: 919132149155446097, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
       propertyPath: m_Name
       value: Jeep UVed
