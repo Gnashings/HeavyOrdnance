@@ -8,7 +8,7 @@ public class RammingModule : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Enemy") && rb.velocity.magnitude >= 20f)
+        if (other.collider.CompareTag("Enemy") && rb.velocity.magnitude >= 60f)
         {
             other.collider.GetComponent<EnemyStats>().TakeDamage(100);
         }

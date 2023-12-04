@@ -8,6 +8,12 @@ using UnityEngine;
 public class RoomSystem : MonoBehaviour
 {
     public LevelDirector director;
+
+    [Tooltip("if on THIS level, spawn enemies")]
+    public bool levelDependent;
+    [Tooltip("which level")]
+    public int level;
+
     [Tooltip("Set all doors here")]
     public List<GameObject> doors = new List<GameObject>();
     [Tooltip("All enemy spawn points appear here")]
@@ -23,6 +29,15 @@ public class RoomSystem : MonoBehaviour
 
     void Start()
     {
+        if (levelDependent == true)
+        {
+            if (level != PlayerProgress.levelsCompleted)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+        }
+
         if (director == null)
         {
             Debug.LogError("No Game Director attached to this room, please attach the director.");

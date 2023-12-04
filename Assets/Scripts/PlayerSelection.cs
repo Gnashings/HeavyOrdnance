@@ -132,21 +132,25 @@ public class PlayerSelection : MonoBehaviour
 
     private void DetermineLevel()
     {
+        //CHANGED FOR TESTING
         if (PlayerProgress.levelsCompleted == 0)
         {
             SceneManager.LoadScene("Level 1");
         }
         if (PlayerProgress.levelsCompleted == 1)
         {
-            SceneManager.LoadScene("Level 2");
+            SceneManager.LoadScene("Level 1");
+            //SceneManager.LoadScene("Level 2");
         }
         if (PlayerProgress.levelsCompleted == 2)
         {
-            SceneManager.LoadScene("Level 3");
+            SceneManager.LoadScene("Level 1");
+            //SceneManager.LoadScene("Level 3");
         }
         if (PlayerProgress.levelsCompleted == 3)
         {
-            SceneManager.LoadScene("Level 4");
+            SceneManager.LoadScene("Level 1");
+            //SceneManager.LoadScene("Level 4");
         }
     }
 }

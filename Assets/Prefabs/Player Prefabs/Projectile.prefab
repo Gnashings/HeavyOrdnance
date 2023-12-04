@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSound: {fileID: 3493382173483983313}
-  killOffTimer: 4
+  killOffTimer: 6
   effects: {fileID: 0}
   missedHitEffect: {fileID: 4880560976839256125, guid: e8c01e3745b0645479decc761cc4517a, type: 3}
   confirmedHitEffect: {fileID: 4010910696176670365, guid: bc3d1046b77a2ff4e93c309a9a834cbe, type: 3}

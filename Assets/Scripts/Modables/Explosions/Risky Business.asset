@@ -18,6 +18,6 @@ MonoBehaviour:
   upwardforce: 1
   particles: {fileID: 1680070425851635562, guid: e54969b1ed732494cbcdca8d81f21481, type: 3}
   canDamagePlayer: 0
-  canAffectPlayer: 1
+  canAffectPlayer: 0
   canDamageEnemies: 1
   canAffectEnemies: 1

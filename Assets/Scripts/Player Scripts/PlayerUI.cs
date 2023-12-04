@@ -56,6 +56,7 @@ public class PlayerUI : MonoBehaviour
                 GameUnpause();
             }
             else GamePause();
+
         }
 
         //handles reload bar
