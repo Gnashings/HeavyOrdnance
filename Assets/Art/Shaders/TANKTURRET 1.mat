@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_867e22204f8d4ce5814d68a6f3af18da:
-        m_Texture: {fileID: 2800000, guid: 35ce5abb27238a8459a93dcbb1546b52, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -84,11 +84,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_27c9faaabe4d492786d223ff647c2409: 0.25
+    - Vector1_27c9faaabe4d492786d223ff647c2409: 0
     - Vector1_2d355f6e449a41aa9eec2831a606bfa6: 0
     - Vector1_49cc445d197349dca5e292675fd7ffa5: 1
     - Vector1_a58e1a23dd994518a36d7cbe308f9c0e: 0
-    - Vector1_ab530c1bf20e4513869d9f68f87aaafb: 0.005
+    - Vector1_a58e1a23dd994518a36d7cbe308f9c0e_1: 0.1
+    - Vector1_ab530c1bf20e4513869d9f68f87aaafb: 0.002
+    - Vector1_ab530c1bf20e4513869d9f68f87aaafb_1: 0.15
+    - Vector1_d9a5a9e1ba9d466e9378c412a4d6b1a4: 100
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -111,7 +114,7 @@ Material:
     - Color_6207e0056c6f407bad10fe5f4687c404: {r: 0, g: 0, b: 0, a: 1}
     - Color_747bd21ae9e24ede9ea3b3c37d9a6cfd: {r: 0.66460484, g: 0.8946237, b: 0.9716981, a: 0}
     - Color_ab407346ec0b43cb9532b0186cb6ec58: {r: 0, g: 0.57125807, b: 0.6415094, a: 0}
-    - Color_ad2d2924226c471f8a39978cdafdbf2d: {r: 0.6189036, g: 0.7169812, b: 0.63700885, a: 0}
+    - Color_ad2d2924226c471f8a39978cdafdbf2d: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
