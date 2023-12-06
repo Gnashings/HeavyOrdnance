@@ -510,9 +510,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2822639755269671151, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2822639755269671151, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
       propertyPath: m_Materials.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -2822639755269671151, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dfc7aca46eb77c40b694c9f7160f788, type: 2}
+    - target: {fileID: -2822639755269671151, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7791317ebd861a46b9a5b4088fd3dd4, type: 2}
+    - target: {fileID: -2822639755269671151, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d3ff3183f9c4f94b8f9a0ef8c7b9e43, type: 2}
     - target: {fileID: -2822639755269671151, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
@@ -520,6 +536,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
       propertyPath: m_Name
       value: Jeep UVed
+      objectReference: {fileID: 0}
+    - target: {fileID: 3701896001717430147, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e93301758e5c21439de48e71bd924fe, type: 3}
@@ -583,6 +603,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -6897740705649033912, guid: b308170129bc4464894d90c851375a57, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dfc7aca46eb77c40b694c9f7160f788, type: 2}
     - target: {fileID: -6897740705649033912, guid: b308170129bc4464894d90c851375a57, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 

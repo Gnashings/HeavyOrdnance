@@ -2022,6 +2022,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4746628951997641013}
     m_Modifications:
+    - target: {fileID: 7726755594073700444, guid: 40e9b28dee1734349878ec7d84f9f467, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d3ff3183f9c4f94b8f9a0ef8c7b9e43, type: 2}
     - target: {fileID: 8086792807205427593, guid: 40e9b28dee1734349878ec7d84f9f467, type: 3}
       propertyPath: m_Name
       value: risky business (1) Variant
