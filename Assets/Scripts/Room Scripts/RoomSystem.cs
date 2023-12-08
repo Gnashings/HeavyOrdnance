@@ -25,6 +25,9 @@ public class RoomSystem : MonoBehaviour
     [HideInInspector]
     public bool roomCompleted;
     public delegate void OnRoomCompleted();
+
+    private float spawnTime = 5f;
+
     public static OnRoomCompleted onRoomCompleted;
 
     void Start()
@@ -63,7 +66,6 @@ public class RoomSystem : MonoBehaviour
         }
 
         //spawnPointList = Array.FindAll(GetComponentsInChildren<Transform>(), child => child != this.transform && !child.CompareTag("Door"));
-
         director.AddThisRoom(this.GetComponent<RoomSystem>());
     }
 
@@ -71,10 +73,22 @@ public class RoomSystem : MonoBehaviour
     {
         foreach (Transform spawner in spawnPointList)
         {
-            spawner.gameObject.GetComponent<SpawnEnemy>().TriggerEnemy();
-            enemyCount++;
+            if (spawner.gameObject.GetComponent<SpawnEnemy>().TriggerEnemy() == true)
+            {
+                enemyCount++;
+            }
+
         }
     }
+
+    //release the enemies over time
+    IEnumerator ReleaseTimer()
+    {
+        ReleaseEnemies();
+        yield return new WaitForSeconds(spawnTime);
+        ReleaseEnemies();
+    }
+
     public void LockDoors()
     {
         foreach (GameObject door in doors)
@@ -84,6 +98,7 @@ public class RoomSystem : MonoBehaviour
             door.GetComponentInChildren<TMP_Text>().text = enemyCount.ToString();
         }
     }
+
     private void UnlockDoors()
     {
         foreach (GameObject door in doors)
@@ -121,7 +136,10 @@ public class RoomSystem : MonoBehaviour
         {
             enemiesKilled = 0;
             trigger.enabled = false;
-            ReleaseEnemies();
+            //Old
+            //ReleaseEnemies();
+            //new
+            StartCoroutine(ReleaseTimer());
             LockDoors();
         }
     }

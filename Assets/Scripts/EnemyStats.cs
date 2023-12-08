@@ -28,6 +28,7 @@ public class EnemyStats : MonoBehaviour
         totalHP = stats.health;
         gibbed = false;
     }
+
     public void TakeDamage(float damage)
     {
         if (totalHP + 1 < damage)

@@ -31,7 +31,7 @@ public class EnemyUI : MonoBehaviour
     void LateUpdate()
     {
         transform.LookAt(transform.position + cameraPos.forward);
-        transform.position = enemyPos.position;
+        //transform.position = enemyPos.position;
         textMeshPro.text = enemyStats.health.ToString();
     }
 
