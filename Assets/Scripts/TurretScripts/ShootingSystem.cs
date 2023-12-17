@@ -1,16 +1,17 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
- 
-public class ShootingSystem : MonoBehaviour {
+
+public class ShootingSystem : MonoBehaviour
+{
     private float fireRate;
     private float damage;
     public float fieldOfView;
     public GameObject projectile;
     public List<GameObject> projectileSpawns;
     public EnemyStatsPerameters perams;
-    
- 
+    public LineRenderer line;
+
     List<GameObject> lastProjectilesShot = new List<GameObject>();
     float m_fireTimer = 0.0f;
     private GameObject target;
@@ -28,42 +29,63 @@ public class ShootingSystem : MonoBehaviour {
         if (target == null)
             target = GameObject.FindGameObjectWithTag("Player");
 
-        
+
     }
 
 
     // Update is called once per frame
-    void Update () {
-        if(!target)
+    void Update()
+    {
+        if (!target)
         {
-            
- 
+
+
             return;
         }
 
-            m_fireTimer += Time.deltaTime;
- 
-            if(m_fireTimer >= fireRate){
-                float angle = Quaternion.Angle(transform.rotation, Quaternion.LookRotation(target.transform.position - transform.position));
-             
-                if(angle < fieldOfView){
-                    SpawnProjectiles();
-                 
-                    m_fireTimer = 0.0f;
+        m_fireTimer += Time.deltaTime;
+
+        if (m_fireTimer >= fireRate)
+        {
+            float angle = Quaternion.Angle(transform.rotation, Quaternion.LookRotation(target.transform.position - transform.position));
+
+            if (angle < fieldOfView)
+            {
+                if (line)
+                {
+                    line.startColor = Color.red;
+                    line.endColor = Color.red;
+                }
+                SpawnProjectiles();
+
+                m_fireTimer = 0.0f;
+            }
+            else
+            {
+                if (line)
+                {
+                    line.startColor = Color.green;
+                    line.endColor = Color.green;
                 }
             }
-     
+
+        }
+
     }
- 
-    void SpawnProjectiles(){
-        if(!projectile){
+
+    void SpawnProjectiles()
+    {
+        if (!projectile)
+        {
             return;
         }
- 
+
         lastProjectilesShot.Clear();
- 
-        for(int i = 0; i < projectileSpawns.Count; i++){
-            if(projectileSpawns[i]){
+
+        for (int i = 0; i < projectileSpawns.Count; i++)
+        {
+            if (projectileSpawns[i])
+            {
                 Quaternion firingDirection = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(90, 0, 0));
                 GameObject proj = Instantiate(projectile, projectileSpawns[i].transform.position, firingDirection);
                 proj.GetComponent<BaseProjectile>().FireProjectile(projectileSpawns[i], target, damage, fireRate);
@@ -72,19 +94,21 @@ public class ShootingSystem : MonoBehaviour {
 
                 GetComponent<AudioSource>().Play();
 
- 
+
                 lastProjectilesShot.Add(proj);
             }
         }
     }
- 
-    public void SetTarget(GameObject targetObj){
+
+    public void SetTarget(GameObject targetObj)
+    {
         target = targetObj;
     }
- 
+
     void RemoveLastProjectiles()
     {
-        while(lastProjectilesShot.Count > 0){
+        while (lastProjectilesShot.Count > 0)
+        {
             Destroy(lastProjectilesShot[0]);
             lastProjectilesShot.RemoveAt(0);
         }

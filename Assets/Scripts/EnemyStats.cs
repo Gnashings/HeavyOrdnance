@@ -15,17 +15,26 @@ public class EnemyStats : MonoBehaviour
     public Explosion gibbedExplosion;
     public GameObject deathExplosionFX;
 
+    //CASH MONEY BABYYYY
+    public int rewardTotal;
+
     private bool gibbed;
+
+    //deligate for when an enemy is killed
     public delegate void OnDeath();
     public static OnDeath onDeath;
-    //deligate for when an enemy is killed
+
 
     void Start()
     {
         //stats.health = 0;
         health = 0;
-        health = stats.health;
+        health = stats.health * (1 + EnemyModifiers.healthMod);
         totalHP = stats.health;
+
+        //temp
+        rewardTotal = System.Convert.ToInt32(totalHP);
+
         gibbed = false;
     }
 
@@ -55,6 +64,7 @@ public class EnemyStats : MonoBehaviour
         {
             explosion.Explode();
         }
+        PlayerProgress.money += rewardTotal;
         //delegate call
         onDeath?.Invoke();
     }

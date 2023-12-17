@@ -14,6 +14,9 @@ public static class PlayerProgress
     public static string curTracks;
     public static string curGadgets;
 
+    //inventory
+    public static List<string> unlockedItems;
+
     public static bool paused;
     public static string curLevel;
     public static int levelsCompleted;
@@ -24,6 +27,11 @@ public static class PlayerProgress
     public static bool hideGunReload;
     //TODO change to this
     public static TurretStats turretInfo;
+    public static BodyStats bodyInfo;
+    public static TrackStats trackInfo;
+
+    //Money stats
+    public static float money;
 
     //options
     public static bool godMode;
@@ -48,10 +56,20 @@ public static class PlayerProgress
         hasBody = true;
     }
 
+    public static void SetBodyStats(BodyStats selection)
+    {
+        bodyInfo = selection;
+    }
+
     public static void SetTracks(string selection)
     {
         curTracks = selection;
         hasTracks = true;
+    }
+
+    public static void SetTrackStats(TrackStats selection)
+    {
+        trackInfo = selection;
     }
 
     public static void SetGadget(string selection)
@@ -88,6 +106,20 @@ public static class PlayerProgress
 
     }
 
+    public static bool CheckPartUnlock(string thisString)
+    {
+        if (PlayerProgress.unlockedItems == null)
+        {
+            return false;
+        }
+        for (int i = 0; i < PlayerProgress.unlockedItems.Count; i++)
+        {
+            if (PlayerProgress.unlockedItems[i].Equals(thisString))
+                return true;
+        }
+        return false;
+    }
+
     public static void ResetPlayerStats()
     {
         roidDmgMod = 0;
@@ -109,6 +141,14 @@ public static class PlayerProgress
         //UI RESETS
         hideGunReload = false;
 
+        unlockedItems = null;
+        turretInfo = null;
+        bodyInfo = null;
+        trackInfo = null;
+        //no money no prollems
+        money = 0;
+
         Debug.Log("all stats resets");
     }
+
 }

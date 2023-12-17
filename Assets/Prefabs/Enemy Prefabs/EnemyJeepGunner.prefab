@@ -82,6 +82,7 @@ MonoBehaviour:
   projectileSpawns:
   - {fileID: 6342848399210971722}
   perams: {fileID: 11400000, guid: fafaa48d85208144a99e25f14b022d39, type: 2}
+  line: {fileID: 0}
 --- !u!114 &3618103009843974138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,11 +258,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: da760ed254de4e4408ab3fdbb72028c8, type: 2}
-  health: 188
+  health: 200
   isBomber: 0
   explosion: {fileID: 8365247258113469917}
   gibbedExplosion: {fileID: 0}
   deathExplosionFX: {fileID: 1680070425851635562, guid: dded4e2c3938b06428ebcf39a14fac15, type: 3}
+  rewardTotal: 0
 --- !u!114 &8365247258113469917
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoseScene.unity
     guid: d03527ffcae846542b9e22c9c268a020
+  - enabled: 1
+    path: Assets/Scenes/MissionMenu.unity
+    guid: a4c45280eb5001a4b8515b5923f65ef7
   m_configObjects: {}

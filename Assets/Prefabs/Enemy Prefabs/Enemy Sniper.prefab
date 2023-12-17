@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5274807384775236879}
   - component: {fileID: 6622994083207752819}
+  - component: {fileID: 8175772581079754177}
   m_Layer: 0
   m_Name: SightsAutoTurret
   m_TagString: Untagged
@@ -50,7 +51,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 11f7bdcc2113fba4794136a6c5a6d7b1, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,8 +113,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.148332, g: 1, b: 0, a: 1}
+      key1: {r: 0.148332, g: 1, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -136,7 +137,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 4
@@ -147,6 +148,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &8175772581079754177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641626412169786581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd2b2cee2c63194daefaf4406dc40b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line: {fileID: 6622994083207752819}
 --- !u!54 &34766674993081521
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -207,6 +221,7 @@ MonoBehaviour:
   explosion: {fileID: 222843799253293048}
   gibbedExplosion: {fileID: 0}
   deathExplosionFX: {fileID: 0}
+  rewardTotal: 0
 --- !u!1 &3079547412257091081
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,11 +459,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884692394f0fd5649937ff6f1991b0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfView: 100
+  fieldOfView: 10
   projectile: {fileID: 138699865376652563, guid: d3b9b14fb4732d748b90ba4c65af942d, type: 3}
   projectileSpawns:
   - {fileID: 5981176943635223007}
   perams: {fileID: 11400000, guid: c42ed11e4a3e4f64b878d7aac986f3c8, type: 2}
+  line: {fileID: 6622994083207752819}
 --- !u!114 &5981176945048174685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251f9e045ff3bcb47aafbf4f9c4d9104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 100
+  spinSpeed: 20
   lookUpDown: 0
 --- !u!82 &6803653574564939948
 AudioSource:
@@ -688,6 +704,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7791317ebd861a46b9a5b4088fd3dd4, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dfc7aca46eb77c40b694c9f7160f788, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7791317ebd861a46b9a5b4088fd3dd4, type: 2}
     - target: {fileID: 919132149155446097, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
       propertyPath: m_Name
       value: Proxy TurretStationary Base
@@ -771,6 +799,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: df1152b6f1b794e43850021495c52500, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7791317ebd861a46b9a5b4088fd3dd4, type: 2}
+    - target: {fileID: -7511558181221131132, guid: df1152b6f1b794e43850021495c52500, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7791317ebd861a46b9a5b4088fd3dd4, type: 2}
+    - target: {fileID: -7511558181221131132, guid: df1152b6f1b794e43850021495c52500, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dfc7aca46eb77c40b694c9f7160f788, type: 2}
     - target: {fileID: -5754084199372789682, guid: df1152b6f1b794e43850021495c52500, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -797,6 +837,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3276090537789999120}
     m_Modifications:
+    - target: {fileID: 4494899023012756868, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494899023012756868, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494899023012756868, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.42
+      objectReference: {fileID: 0}
     - target: {fileID: 5493298485868550341, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -871,7 +923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5493298485868550342, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.3
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 5493298485868550342, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -893,5 +945,13 @@ PrefabInstance:
       propertyPath: enemyStats
       value: 
       objectReference: {fileID: 683254397056996691}
+    - target: {fileID: 5493298486680773124, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}
+      propertyPath: m_fontSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493298486680773124, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f247d16fd4bb3ca40976ab260952c36c, type: 3}

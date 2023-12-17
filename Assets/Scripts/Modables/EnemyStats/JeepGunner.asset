@@ -16,6 +16,6 @@ MonoBehaviour:
   health: 200
   canMove: 1
   fireRate: 0.15
-  damage: 6
+  damage: 5
   bulletVelocity: 5000
   bullAccuracy: 0.15

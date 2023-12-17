@@ -67,7 +67,7 @@ public class AutoTurret : MonoBehaviour
             cooldown = cooldown * 0.90f;
         }
 
-        Debug.Log(cooldown + " CD speed");
+        //Debug.Log(cooldown + " CD speed");
         //light.SetActive(true);
         canDamage = true;
     }

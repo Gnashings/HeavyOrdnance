@@ -138,7 +138,7 @@ public class PlayerStats : MonoBehaviour
             armorRecharge = noBodyMod.armorRecharge;
             armorBreakTimer = noBodyMod.armorBreakTimer;
             canBomba = false;
-
+            Debug.Log("NO MOD");
         }
 
         //Big Bomba
@@ -150,7 +150,7 @@ public class PlayerStats : MonoBehaviour
             armorRecharge = bigBomba.armorRecharge;
             armorBreakTimer = bigBomba.armorBreakTimer;
             canBomba = true;
-
+            Debug.Log("BIG BOMBA");
         }
 
         //Gustav
@@ -163,7 +163,7 @@ public class PlayerStats : MonoBehaviour
             canBomba = false;
             armorRecharge = gustav.armorRecharge;
             armorBreakTimer = gustav.armorBreakTimer;
-
+            Debug.Log("NO GUSTAVE");
             //failsafe gustav ability
             if (hasGustavAbility)
             {
@@ -184,6 +184,7 @@ public class PlayerStats : MonoBehaviour
             armorBreakTimer = reaper.armorBreakTimer;
             canBomba = false;
             autoGun.SetActive(true);
+            Debug.Log("REAPER");
         }
 
     }
@@ -337,6 +338,7 @@ public class PlayerStats : MonoBehaviour
                 leftOverDamage = damage - armor;
                 armor = 0;
                 health -= leftOverDamage;
+                PlayerProgress.money -= (int)leftOverDamage;
                 StartCoroutine(ArmorBreakCooldown());
                 armorBreakSound.Play();
                 if (PlayerProgress.godMode == false)
@@ -352,7 +354,11 @@ public class PlayerStats : MonoBehaviour
                 armor -= damage;
         }
         else
+        {
             health -= damage;
+            PlayerProgress.money -= (int)damage;
+        }
+
 
         if (PlayerProgress.godMode == false)
         {
@@ -463,6 +469,7 @@ public class PlayerStats : MonoBehaviour
             CheckGadgetMods();
             return;
         }
+
         //turret
         if (PlayerProgress.hasTurret == false)
         {
@@ -555,6 +562,7 @@ public class PlayerStats : MonoBehaviour
                 gadgets = GadgetMods.steroid;
             }
         }
+
     }
 
     public enum GadgetMods

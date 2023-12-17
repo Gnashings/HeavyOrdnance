@@ -18,7 +18,7 @@ public class EnemyUI : MonoBehaviour
         gameObject.GetComponent<Canvas>().worldCamera = cam;
         cameraPos = cam.transform;
         //enemyPos = gameObject.transform.root;
-        Debug.Log("Parent " + gameObject.transform.root.name);
+        //Debug.Log("Parent " + gameObject.transform.root.name);
     }
 
     // Start is called before the first frame update

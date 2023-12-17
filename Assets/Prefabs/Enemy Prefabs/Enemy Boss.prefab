@@ -47,6 +47,7 @@ MonoBehaviour:
   explosion: {fileID: 8900800069907289889}
   gibbedExplosion: {fileID: 0}
   deathExplosionFX: {fileID: 0}
+  rewardTotal: 0
 --- !u!114 &8900800069907289889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +315,7 @@ MonoBehaviour:
   - {fileID: 5981176943635223007}
   - {fileID: 3079547412257091081}
   perams: {fileID: 11400000, guid: a14985c45129b0b458c1fe3fc761ee3d, type: 2}
+  line: {fileID: 0}
 --- !u!114 &5981176945048174685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +486,18 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7791317ebd861a46b9a5b4088fd3dd4, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dfc7aca46eb77c40b694c9f7160f788, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7791317ebd861a46b9a5b4088fd3dd4, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8f5f45547b164ee42a3d6b5b64276ae7, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
       objectReference: {fileID: 2100000, guid: 1977ca062d056ed4a9fb40a3980b0a4d, type: 2}
@@ -570,6 +584,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: df1152b6f1b794e43850021495c52500, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dfc7aca46eb77c40b694c9f7160f788, type: 2}
+    - target: {fileID: -7511558181221131132, guid: df1152b6f1b794e43850021495c52500, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 24810df3dddc62047b45e140a697ecd1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: df1152b6f1b794e43850021495c52500, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dfc7aca46eb77c40b694c9f7160f788, type: 2}
     - target: {fileID: 919132149155446097, guid: df1152b6f1b794e43850021495c52500, type: 3}
       propertyPath: m_Name
       value: Proxy TurretStationary Top

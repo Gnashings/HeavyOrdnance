@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Basic Enemy
   health: 100
   canMove: 0
-  fireRate: 0.2
+  fireRate: 0.25
   damage: 4
-  bulletVelocity: 1000
-  bullAccuracy: 0
+  bulletVelocity: 2000
+  bullAccuracy: 0.1
