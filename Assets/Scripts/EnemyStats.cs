@@ -30,7 +30,7 @@ public class EnemyStats : MonoBehaviour
         //stats.health = 0;
         health = 0;
         health = stats.health * (1 + EnemyModifiers.healthMod);
-        totalHP = stats.health;
+        totalHP = stats.health * (1 + EnemyModifiers.healthMod);
 
         //temp
         rewardTotal = System.Convert.ToInt32(totalHP);
@@ -64,7 +64,7 @@ public class EnemyStats : MonoBehaviour
         {
             explosion.Explode();
         }
-        PlayerProgress.money += rewardTotal;
+        PlayerProgress.payout += rewardTotal;
         //delegate call
         onDeath?.Invoke();
     }

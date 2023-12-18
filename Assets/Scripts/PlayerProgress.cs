@@ -30,6 +30,7 @@ public static class PlayerProgress
     public static BodyStats bodyInfo;
     public static TrackStats trackInfo;
 
+    public static float payout;
     //Money stats
     public static float money;
 

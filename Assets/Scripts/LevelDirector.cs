@@ -23,6 +23,7 @@ public class LevelDirector : MonoBehaviour
 
     void Start()
     {
+        PlayerProgress.payout = 0;
         roomsCompleted = false;
     }
 
@@ -54,6 +55,7 @@ public class LevelDirector : MonoBehaviour
         }
         if (roomsCompleted == true && PlayerProgress.death == false)
         {
+            PlayerProgress.money += PlayerProgress.payout;
             PlayerProgress.levelsCompleted++;
             Debug.Log("PlayerProgress.levelsCompleted");
             if (PlayerProgress.levelsCompleted == 4)

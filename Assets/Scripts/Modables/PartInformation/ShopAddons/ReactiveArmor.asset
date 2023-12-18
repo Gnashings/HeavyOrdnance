@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5544b37fed3d5e458a9b86d4dac5037, type: 3}
   m_Name: ReactiveArmor
   m_EditorClassIdentifier: 
-  identifier: 
-  title: 
-  description: 
+  identifier: Reactive
+  title: Reactive Armor
+  description: Touching enemies creates an explosion!
   specialEffect: 
-  cost: 0
+  cost: 500
   turretStats: {fileID: 0}
   bodyStats: {fileID: 0}
   trackStats: {fileID: 0}

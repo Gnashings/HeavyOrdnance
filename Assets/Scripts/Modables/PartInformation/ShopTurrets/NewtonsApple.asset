@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Newton's Apple
   description: 
   specialEffect: 
-  cost: 1000
+  cost: 2000
   turretStats: {fileID: 11400000, guid: a040ec2788640a34ea01ffde0e0803ce, type: 2}
   bodyStats: {fileID: 0}
   trackStats: {fileID: 0}

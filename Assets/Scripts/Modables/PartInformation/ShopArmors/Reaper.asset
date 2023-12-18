@@ -16,7 +16,7 @@ MonoBehaviour:
   title: Reaper
   description: 
   specialEffect: 
-  cost: 700
+  cost: 1400
   turretStats: {fileID: 0}
   bodyStats: {fileID: 11400000, guid: 362ef5d188ac14541beda079bc89d971, type: 2}
   trackStats: {fileID: 0}
